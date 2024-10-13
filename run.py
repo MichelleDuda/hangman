@@ -43,7 +43,40 @@ def get_word():
     return word
 
 def play_game(word):
-    print(word)
+    guesses = 6
+    guessed_letters = []
+    guessed_words = []
+    print("_ " * len(word))
+   
+    while guesses > 0:
+        guess = input("\nPlease choose a letter or word: ").upper()
+        validate_input(guess)
+        if not validate_input(guess):
+            print ("Invalid data. Please enter only a single letter or a word.")
+
+        if len(guess) == 1:
+            if guess in guessed_letters:
+                print(f'You already guessed {guess}. Please try again.\n')
+            elif guess not in word:
+                print(f'Sorry! {guess} is not in the word.')
+                guessed_letters.append(guess)
+                guesses -= 1
+            else: 
+                print(f'Congratulations. {guess} is in the word.')
+                guessed_letters.append(guess)
+                print(guessed_letters)
+
+    
+
+def validate_input(guess):
+    if len(guess) == 1 and guess.isalpha():
+        return True
+    elif len(guess) > 1 and guess.isalpha():
+        return True
+    else:
+        return False
+        
+
 
 def main():
     ''' 
@@ -51,4 +84,5 @@ def main():
     '''
     welcome_screen()
     start_game()
+
 main()
