@@ -1,3 +1,5 @@
+import random
+
 def welcome_screen():
     ''' 
     Prints Welcome Screen
@@ -26,17 +28,27 @@ def start_game():
         newGame = input("Please input Y or N: ").upper()
         if newGame == "Y":
             print ("Great! Let's begin")
+            word = get_word()
+            play_game(word)
             break
         elif newGame == "N":
             print("Thanks for stopping by! We hope to see you again soon.")
             break
         else:
             print("Not a valid input. Please type Y or N")
+
+def get_word():
+    words = ['MONKEY', 'GUITAR', 'SCHOOL', 'GOAT', 'ELEPHANT', 'ZEBRA']
+    word = random.choice(words)
+    return word
+
+def play_game(word):
+    print(word)
+
 def main():
     ''' 
     Calls functions for game to play
     '''
     welcome_screen()
     start_game()
-
 main()
