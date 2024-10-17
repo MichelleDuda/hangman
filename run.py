@@ -1,5 +1,79 @@
 import random
 
+hangman_stages = [
+    """
+    +---------+
+    |         |
+    |         O
+    |        \|/
+    |        / \
+    |
+    |
+    ---
+    """,
+    """
+    +---------+
+    |         |
+    |         O
+    |        \|/
+    |        / 
+    |
+    |
+    ---
+    """,
+    """
+    +---------+
+    |         |
+    |         O
+    |        \|/
+    |        
+    |
+    |
+    ---
+    """,
+    """
+    +---------+
+    |         |
+    |         O
+    |        \|
+    |      
+    |
+    |
+    ---
+    """,
+    """
+    +---------+
+    |         |
+    |         O
+    |         |
+    |        
+    |
+    |
+    ---
+    """,
+    """
+    +---------+
+    |         |
+    |         O
+    |        
+    |        
+    |
+    |
+    ---
+    """,
+    """
+    +---------+
+    |         |
+    |         
+    |        
+    |        
+    |
+    |
+    ---
+    """
+]
+
+
 def welcome_screen():
     ''' 
     Prints Welcome Screen
@@ -25,9 +99,10 @@ def start_game():
     '''
     
     while True:
-        newGame = input("Please input Y or N: ").upper()
-        if newGame == "Y":
+        new_game = input("Please input Y or N: ").upper()
+        if new_game == "Y":
             print ("Great! Let's begin")
+            print (hangman_stages[6])
             word = get_word()
             play_game(word)
             break
@@ -47,7 +122,7 @@ def play_game(word):
     guessed_letters = []
     guessed_words = []
     print("_ " * len(word))
-   
+  
     while guesses > 0:
         guess = input("\nPlease choose a letter or word: ").upper()
         validate_input(guess)
@@ -61,12 +136,23 @@ def play_game(word):
                 print(f'Sorry! {guess} is not in the word.')
                 guessed_letters.append(guess)
                 guesses -= 1
+                print(hangman_stages[guesses])
             else: 
                 print(f'Congratulations. {guess} is in the word.')
                 guessed_letters.append(guess)
                 print(guessed_letters)
 
-    
+        if len(guess) > 1:
+            if guess in guessed_words:
+                print(f'You already guessed {guess}. Please try again.\n')
+            elif guess not in word:
+                print(f'Sorry! {guess} is incorrect. Please try again. ')
+                guessed_words.append(guess)
+                guesses -= 1
+            else: 
+                print(f'Congratulations. {guess} is the word.')
+                guessed_words.append(guess)
+                print(guessed_words)
 
 def validate_input(guess):
     if len(guess) == 1 and guess.isalpha():
