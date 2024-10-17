@@ -102,8 +102,9 @@ def start_game():
         new_game = input("Please input Y or N: ").upper()
         if new_game == "Y":
             print ("Great! Let's begin")
-            print (hangman_stages[6])
             word = get_word()
+            print (hangman_stages[6])
+            print("_ " * len(word))
             play_game(word)
             break
         elif newGame == "N":
@@ -121,7 +122,7 @@ def play_game(word):
     guesses = 6
     guessed_letters = []
     guessed_words = []
-    print("_ " * len(word))
+
   
     while guesses > 0:
         guess = input("\nPlease choose a letter or word: ").upper()
