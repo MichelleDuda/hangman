@@ -162,14 +162,18 @@ def play_game(word):
             if len(guess) > 1:
                 if guess in guessed_words:
                     print(f'You already guessed {guess}. Please try again.\n')
-                elif guess not in word:
-                    print(f'Sorry! {guess} is incorrect. Please try again. ')
+                elif guess != word:
                     guessed_words.append(guess)
                     guesses -= 1
+                    print(hangman_stages[guesses])
+                    print(word_completion)
+                    print(f'Sorry! {guess} is incorrect. Please try again. ')
                 else: 
+                    print(hangman_stages[guesses])
+                    print(word_completion)
                     print(f'Congratulations. {guess} is the word.')
                     guessed_words.append(guess)
-                    print(guessed_words)
+                    word_complete = True
 
         if guesses == 0:
                 print(f'\n\nGAME OVER!!! \nYou have run out of guesses. The correct word was {word}.')
@@ -196,6 +200,9 @@ def update_word_completion(guess, word_list, word_completion):
     return word_completion
         
 def check_word_completion(word_completion):
+    '''
+    Checks if the word is complete after a letter or word is guessed
+    '''
     if "_" in word_completion:
         return False
     else: 
