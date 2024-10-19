@@ -122,6 +122,8 @@ def play_game(word):
     guesses = 6
     guessed_letters = []
     guessed_words = []
+    word_completion = ["_" for _ in word]
+    word_list=list(word)
 
   
     while guesses > 0:
@@ -138,10 +140,13 @@ def play_game(word):
                 guessed_letters.append(guess)
                 guesses -= 1
                 print(hangman_stages[guesses])
+                print(word_completion)
             else: 
                 print(f'Congratulations. {guess} is in the word.')
                 guessed_letters.append(guess)
-                print(guessed_letters)
+                update_word_completion(guess, word_list, word_completion)
+                print(hangman_stages[guesses])
+                print(word_completion)
 
         if len(guess) > 1:
             if guess in guessed_words:
@@ -162,6 +167,13 @@ def validate_input(guess):
         return True
     else:
         return False
+
+def update_word_completion(guess, word_list, word_completion):
+    for i, letter in enumerate(word_list):
+        if guess == letter:
+            word_completion[i]=guess
+    return word_completion
+        
         
 
 
