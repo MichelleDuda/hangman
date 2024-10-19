@@ -132,9 +132,10 @@ def play_game(word):
     guessed_words = []
     word_completion = ["_" for _ in word]
     word_list=list(word)
+    word_complete = False
 
   
-    while guesses > 0:
+    while guesses > 0 and not word_complete:
         guess = input("\nPlease choose a letter or word: ").upper()
         validate_input(guess)
         if not validate_input(guess):
@@ -144,17 +145,19 @@ def play_game(word):
                 if guess in guessed_letters:
                     print(f'You already guessed {guess}. Please try again.\n')
                 elif guess not in word:
-                    print(f'Sorry! {guess} is not in the word.')
                     guessed_letters.append(guess)
                     guesses -= 1
                     print(hangman_stages[guesses])
                     print(word_completion)
+                    print(f'Sorry! {guess} is not in the word.')
+                    word_complete = check_word_completion(word_completion)
                 else: 
-                    print(f'Congratulations. {guess} is in the word.')
                     guessed_letters.append(guess)
                     update_word_completion(guess, word_list, word_completion)
                     print(hangman_stages[guesses])
                     print(word_completion)
+                    print(f'Congratulations. {guess} is in the word.')
+                    word_complete = check_word_completion(word_completion)
 
             if len(guess) > 1:
                 if guess in guessed_words:
@@ -192,7 +195,11 @@ def update_word_completion(guess, word_list, word_completion):
             word_completion[i]=guess
     return word_completion
         
-        
+def check_word_completion(word_completion):
+    if "_" in word_completion:
+        return False
+    else: 
+        return True
 
 
 def main():
