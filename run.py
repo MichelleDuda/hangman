@@ -114,11 +114,19 @@ def start_game():
             print("Not a valid input. Please type Y or N")
 
 def get_word():
+    '''
+    Randomly selects a word from the wordlist for the game
+    '''
     words = ['MONKEY', 'GUITAR', 'SCHOOL', 'GOAT', 'ELEPHANT', 'ZEBRA']
     word = random.choice(words)
     return word
 
 def play_game(word):
+    '''
+    Runs the main game loop for Hangman. The player guesses letters or words to try and 
+    correctly identify the hidden word. The player has 6 incorrect guesses available 
+    before losing the game.
+    '''
     guesses = 6
     guessed_letters = []
     guessed_words = []
@@ -161,6 +169,9 @@ def play_game(word):
                 print(guessed_words)
 
 def validate_input(guess):
+    '''
+    Checks if the user's guess is either a letter or string of letters, containing no special characters or numbers
+    '''
     if len(guess) == 1 and guess.isalpha():
         return True
     elif len(guess) > 1 and guess.isalpha():
@@ -169,6 +180,9 @@ def validate_input(guess):
         return False
 
 def update_word_completion(guess, word_list, word_completion):
+    ''' 
+    Updates the word_completion variable with correctly guessed letters
+    '''
     for i, letter in enumerate(word_list):
         if guess == letter:
             word_completion[i]=guess
