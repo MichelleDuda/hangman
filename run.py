@@ -170,6 +170,7 @@ def play_game(word):
                     print(f'Sorry! {guess} is incorrect. Please try again. ')
                 else: 
                     print(hangman_stages[guesses])
+                    word_completion = list(guess)
                     print(word_completion)
                     print(f'Congratulations. {guess} is the word.')
                     guessed_words.append(guess)
@@ -177,7 +178,7 @@ def play_game(word):
 
         if guesses == 0:
                 print(f'\n\nGAME OVER!!! \nYou have run out of guesses. The correct word was {word}.')
-                print("\nWould you like to play again (Y/N)")    
+    restart_game()                
 
 def validate_input(guess):
     '''
@@ -208,6 +209,26 @@ def check_word_completion(word_completion):
     else: 
         return True
 
+def restart_game():
+    ''' 
+    Determines if a new game should commence
+    '''
+    print("\nWould you like to play again (Y/N)")
+    while True:
+        new_game = input("Please input Y or N: ").upper()
+        if new_game == "Y":
+            print ("Great! Let's begin")
+            word = get_word()
+            print (hangman_stages[6])
+            print("_ " * len(word))
+            play_game(word)
+            break
+        elif new_game == "N":
+            print("Thanks for stopping by! We hope to see you again soon.")
+            break
+        else:
+            print("Not a valid input. Please type Y or N")
+
 
 def main():
     ''' 
@@ -215,5 +236,4 @@ def main():
     '''
     welcome_screen()
     start_game()
-
 main()
