@@ -120,15 +120,30 @@ def get_word():
     while True:
         difficulty = input('Please select your difficult level:\n1. Easy\n2. Medium\n3. Hard\n\n Enter 1, 2 or 3 accordingly:')
         if difficulty == '1':
-            words = ['MONKEY', 'GUITAR', 'SCHOOL', 'GOAT', 'ELEPHANT', 'ZEBRA']
+            words = [
+                'CAMP', 'BARK', 'MOON', 'FIRE', 'CORN', 
+                'WOLF', 'SHIP', 'TREE', 'FOOD', 'BANK', 
+                'WIND', 'SNOW', 'DUCK', 'BOOK', 'FISH', 
+                'ROAD', 'HILL', 'ROCK', 'STAR', 'GOLD'
+                ]
             word = random.choice(words)
             return word
         elif difficulty == '2':
-            words = ['MONEY', 'JEWLERY', 'TELEVISION', 'AMBULANCE', 'STEAMBOAT', 'HURRICANE']
+            words = [
+                'TRAIN', 'SHARK', 'PEACH', 'CLOUD', 'BREAD', 
+                'SNAKE', 'LIGHT', 'STAGE', 'BRICK', 'HORSE', 
+                'BRAIN', 'DRIVE', 'PIZZA', 'CRANE', 'FLUTE', 
+                'GRAPE', 'SMILE', 'TOAST', 'WORLD', 'CYCLE'
+                ]
             word = random.choice(words)
             return word
         elif difficulty == '3':
-            words = ['INTERNATIONAL', 'DATELINE', 'STUDIO']
+            words = [
+                'PLANET', 'JUNGLE', 'ROCKET', 'GARDEN', 'SILENT', 
+                'MOBILE', 'BRIDGE', 'FARMER', 'MARKET', 'MOUNTA', 
+                'DESERT', 'PIRATE', 'STREAM', 'BOTTLE', 'SCHOOL', 
+                'ISLAND', 'SUMMER', 'SPIDER', 'KITTEN', 'STREET'
+                ]
             word = random.choice(words)
             return word
         else: 
