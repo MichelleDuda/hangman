@@ -90,7 +90,7 @@ def welcome_screen():
     
     """)
 
-    name = input("\nWelcome to Hangman! What's your name? ")
+    name = input("\nWelcome to Hangman! What's your name?\n")
     print(f'\nHello {name}. Are you ready to start a new game of hangman?')
 
 def start_game():
@@ -99,7 +99,7 @@ def start_game():
     '''
     
     while True:
-        new_game = input("Please input Y or N: ").upper()
+        new_game = input("Please input Y or N:\n").upper()
         if new_game == "Y":
             print ("Great! Let's begin")
             word = get_word()
@@ -118,7 +118,7 @@ def get_word():
     Randomly selects a word from the wordlist for the game
     '''
     while True:
-        difficulty = input('Please select your difficult level:\n1. Easy\n2. Medium\n3. Hard\n\n Enter 1, 2 or 3 accordingly:')
+        difficulty = input('Please select your difficult level:\n1. Easy\n2. Medium\n3. Hard\n\n Enter 1, 2 or 3 accordingly:\n')
         if difficulty == '1':
             words = [
                 'CAMP', 'BARK', 'MOON', 'FIRE', 'CORN', 
@@ -164,7 +164,7 @@ def play_game(word):
 
   
     while guesses > 0 and not word_complete:
-        guess = input("\nPlease choose a letter or word: ").upper()
+        guess = input("\nPlease choose a letter or word:\n").upper()
         validate_input(guess)
         if not validate_input(guess):
             print ("Invalid data. Please enter only a single letter or a word.")
@@ -243,7 +243,7 @@ def restart_game():
     '''
     print("\nWould you like to play again (Y/N)")
     while True:
-        new_game = input("Please input Y or N: ").upper()
+        new_game = input("Please input Y or N:\n").upper()
         if new_game == "Y":
             print ("Great! Let's begin")
             word = get_word()
