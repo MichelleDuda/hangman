@@ -117,9 +117,22 @@ def get_word():
     '''
     Randomly selects a word from the wordlist for the game
     '''
-    words = ['MONKEY', 'GUITAR', 'SCHOOL', 'GOAT', 'ELEPHANT', 'ZEBRA']
-    word = random.choice(words)
-    return word
+    while True:
+        difficulty = input('Please select your difficult level:\n1. Easy\n2. Medium\n3. Hard\n\n Enter 1, 2 or 3 accordingly:')
+        if difficulty == '1':
+            words = ['MONKEY', 'GUITAR', 'SCHOOL', 'GOAT', 'ELEPHANT', 'ZEBRA']
+            word = random.choice(words)
+            return word
+        elif difficulty == '2':
+            words = ['MONEY', 'JEWLERY', 'TELEVISION', 'AMBULANCE', 'STEAMBOAT', 'HURRICANE']
+            word = random.choice(words)
+            return word
+        elif difficulty == '3':
+            words = ['INTERNATIONAL', 'DATELINE', 'STUDIO']
+            word = random.choice(words)
+            return word
+        else: 
+            print ('Not A Valid Option. Please select 1, 2, or 3')
 
 def play_game(word):
     '''
