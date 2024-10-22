@@ -120,7 +120,7 @@ def get_word():
     while True:
         difficulty = input(
             'Please select your difficulty level:\n\n'
-            '1. Easy\n2. Medium\n3.Hard\n\n'
+            '1. Easy\n2. Medium\n3. Hard\n\n'
             'Enter 1, 2 or 3 accordingly:\n'
             )
         if difficulty == '1':
@@ -214,7 +214,7 @@ def play_game(word):
                 f'\n\nGAME OVER!!! \nYou have run out of guesses. '
                 f'The correct word was {word}.')
 
-    if word_complete == True:
+    if word_complete:
         print(f'\nCONGRATULATIONS! YOU WIN!! The word is {word}!')
     restart_game()
 
