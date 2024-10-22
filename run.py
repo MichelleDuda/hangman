@@ -92,6 +92,7 @@ def welcome_screen():
     name = input("\n\nWelcome to Hangman! What's your name?\n")
     print(f'\nHello {name}. Are you ready to start a new game of hangman?')
 
+
 def start_game():
     '''
     Determines if a new game should commence
@@ -110,6 +111,7 @@ def start_game():
             break
         else:
             print("Not a valid input. Please type Y or N")
+
 
 def get_word():
     '''
@@ -146,6 +148,7 @@ def get_word():
             return word
         else:
             print('Not A Valid Option. Please select 1, 2, or 3')
+
 
 def play_game(word):
     '''
@@ -203,10 +206,11 @@ def play_game(word):
 
         if guesses == 0:
             print(f'\n\nGAME OVER!!! \nYou have run out of guesses. The correct word was {word}.')
-    
+
     if word_complete == True:
         print(f'\nCONGRATULATIONS! YOU WIN!! The word is {word}!')
     restart_game()
+
 
 def validate_input(guess):
     '''
@@ -219,6 +223,7 @@ def validate_input(guess):
     else:
         return False
 
+
 def update_word_completion(guess, word_list, word_completion):
     '''
     Updates the word_completion variable with correctly guessed letters
@@ -228,6 +233,7 @@ def update_word_completion(guess, word_list, word_completion):
             word_completion[i] = guess
     return word_completion
 
+
 def check_word_completion(word_completion):
     '''
     Checks if the word is complete after a letter or word is guessed
@@ -236,6 +242,7 @@ def check_word_completion(word_completion):
         return False
     else:
         return True
+
 
 def restart_game():
     '''
@@ -264,4 +271,6 @@ def main():
     '''
     welcome_screen()
     start_game()
+
+
 main()
