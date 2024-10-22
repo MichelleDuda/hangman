@@ -169,6 +169,7 @@ def play_game(word):
     word_complete = False
 
     while guesses > 0 and not word_complete:
+        print(f'You have {guesses} guesses remaining!')
         guess = input("\nPlease choose a letter or word:\n").upper()
         validate_input(guess)
         if not validate_input(guess):
@@ -182,14 +183,14 @@ def play_game(word):
                     guesses -= 1
                     print(hangman_stages[guesses])
                     print(word_completion)
-                    print(f'\033[1;31mSorry! {guess} is not in the word.\033[0m')
+                    print(f'\033[1;31mSorry! {guess} is not in the word.\033[0m\n')
                     word_complete = check_word_completion(word_completion)
                 else:
                     guessed_letters.append(guess)
                     update_word_completion(guess, word_list, word_completion)
                     print(hangman_stages[guesses])
                     print(word_completion)
-                    print(f'\033[1;32mCongratulations. {guess} is in the word.\033[0m')
+                    print(f'\033[1;32mCongratulations. {guess} is in the word.\033[0m\n')
                     word_complete = check_word_completion(word_completion)
 
             if len(guess) > 1:
@@ -200,7 +201,7 @@ def play_game(word):
                     guesses -= 1
                     print(hangman_stages[guesses])
                     print(word_completion)
-                    print(f'\033[1;31mSorry! {guess} is incorrect. Please try again. \033[0m')
+                    print(f'\033[1;31mSorry! {guess} is incorrect. Please try again. \033[0m\n')
                 else:
                     print(hangman_stages[guesses])
                     word_completion = list(guess)
