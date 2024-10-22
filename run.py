@@ -118,7 +118,11 @@ def get_word():
     Randomly selects a word from the wordlist for the game
     '''
     while True:
-        difficulty = input('Please select your difficult level:\n1. Easy\n2. Medium\n3. Hard\n\n Enter 1, 2 or 3 accordingly:\n')
+        difficulty = input(
+            'Please select your difficulty level:\n\n'
+            '1. Easy\n2. Medium\n3.Hard\n\n'
+            'Enter 1, 2 or 3 accordingly:\n'
+            )
         if difficulty == '1':
             words = [
                 'CAMP', 'BARK', 'MOON', 'FIRE', 'CORN',
@@ -153,8 +157,9 @@ def get_word():
 def play_game(word):
     '''
     Runs the main game loop for Hangman.
-    Player guesses letters or words to try and correctly identify the hidden word.
-    There are 6 incorrect guesses available before losing the game.
+    Player guesses letters or words to try and correctly identify
+    the hidden word. There are 6 incorrect guesses available
+    before losing the game.
     '''
     guesses = 6
     guessed_letters = []
@@ -205,7 +210,9 @@ def play_game(word):
                     word_complete = check_word_completion(word_completion)
 
         if guesses == 0:
-            print(f'\n\nGAME OVER!!! \nYou have run out of guesses. The correct word was {word}.')
+            print(
+                f'\n\nGAME OVER!!! \nYou have run out of guesses. '
+                f'The correct word was {word}.')
 
     if word_complete == True:
         print(f'\nCONGRATULATIONS! YOU WIN!! The word is {word}!')
@@ -214,7 +221,8 @@ def play_game(word):
 
 def validate_input(guess):
     '''
-    Checks if the user's guess is either a letter or string of letters, containing no special characters or numbers
+    Checks if the user's guess is either a letter or string of letters,
+    containing no special characters or numbers
     '''
     if len(guess) == 1 and guess.isalpha():
         return True
