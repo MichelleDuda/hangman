@@ -178,9 +178,9 @@ def play_game(word):
     while guesses > 0 and not word_complete:
         print(f'You have {guesses} guesses remaining!')
         guess = input("\nPlease choose a letter or word:\n").upper()
-        validate_input(guess)
-        if not validate_input(guess):
-            print("Invalid data. Please enter only a single letter or a word.")
+        validate_input(word, guess)
+        if not validate_input(word, guess):
+            print(f"Invalid data. Please enter only a single letter or a word containing {len(word)} characters.")
         else:
             if len(guess) == 1:
                 if guess in guessed_letters:
@@ -227,14 +227,15 @@ def play_game(word):
     restart_game()
 
 
-def validate_input(guess):
+def validate_input(word, guess):
     '''
-    Checks if the user's guess is either a letter or string of letters,
-    containing no special characters or numbers
+    Checks if the user's guess is either a letter or string of letters
+    equal to the length of the word, containing no special characters
+    or numbers
     '''
     if len(guess) == 1 and guess.isalpha():
         return True
-    elif len(guess) > 1 and guess.isalpha():
+    elif len(guess) == len(word) and guess.isalpha():
         return True
     else:
         return False
