@@ -101,31 +101,39 @@ def welcome_screen():
     print(f'\nHello {name}.')
 
     while True:
-        instructions = input("Would you like to view the game instructions? Please enter Y or N:\n").upper()
+        instructions = input(
+            "Would you like to view the game instructions? Enter Y or N:\n"
+        ).upper()
         if instructions == "Y":
             print(r"""
-            ---------------------------------------------------------------------------
-            ---------------------------------------------------------------------------
-                
-                                        How To Play
-                
-            Guess the secret word before the stick figure man is hung from the gallows.
+            ----------------------------------------------------------------------
+            ----------------------------------------------------------------------
 
-            Enter a letter to see if it is in the word. If the guess is correct the 
-            corresponding blank slot will be filled with the letter. If the guess is 
-            wrong, a new peice of the stick figure man will be drawn. You have 6 lives
-            before the drawing is complete & you lose the game.
+                                        How To Play
+
+            Guess the secret word before the stick figure man is hung from the
+            gallows.
+
+            Enter a letter to see if it is in the word. If the guess is correct
+            the corresponding blank slot will be filled with the letter. If the
+            guess is wrong, a new peice of the stick figure man will be drawn.
+
+            You have 6 lives until the drawing is complete & you lose the game.
 
             Do your best to save the man....
-             
-            ---------------------------------------------------------------------------
-            ---------------------------------------------------------------------------
+
+            ----------------------------------------------------------------------
+            ----------------------------------------------------------------------
             """)
             break
         elif instructions == "N":
             break
         else:
-            print(text_color("31", f"\nSorry! {instructions.upper()} is not a valid input. Please type Y or N"))
+            print(text_color(
+                "31",
+                f"\nSorry! {instructions.upper()} is not a valid input. "
+                "Please type Y or N"
+            ))
 
 
 def start_game():
@@ -133,7 +141,10 @@ def start_game():
     Determines if a new game should commence
     '''
     while True:
-        new_game = input(f'\nAre you ready to start a new game of hangman? Please input {text_color('34', 'Y')} or {text_color('34', 'N')}:\n').upper()
+        new_game = input(
+            f'\nAre you ready to start a new game of hangman? Please input '
+            f"{text_color('34', 'Y')} or {text_color('34', 'N')}:\n"
+        ).upper()
         if new_game == "Y":
             print("\nGreat! Let's begin")
             word = get_word()
@@ -145,7 +156,11 @@ def start_game():
             print("Thanks for stopping by! We hope to see you again soon.")
             break
         else:
-            print(text_color("31", f"\nSorry! {new_game.upper()} is not a valid input. Please type Y or N"))
+            print(text_color(
+                "31",
+                f"\nSorry! {new_game.upper()} is not a valid input."
+                "Please type Y or N."
+            ))
 
 
 def get_word():
@@ -172,7 +187,7 @@ def get_word():
             'ISLAND', 'SUMMER', 'SPIDER', 'KITTEN', 'STREET'
         ]
     }
-    
+
     while True:
         difficulty = input(
             'Please select your difficulty level:\n\n'
@@ -181,8 +196,12 @@ def get_word():
             )
         if difficulty in words:
             return random.choice(words[difficulty])
-        else: 
-            print(text_color("31", f'\nSorry! {difficulty.upper()} is not A valid option. Please enter 1, 2, or 3.'))
+        else:
+            print(text_color(
+                "31",
+                f'\nSorry! {difficulty.upper()} is not A valid option.'
+                " Please enter 1, 2, or 3."
+                ))
 
 
 def play_game(word):
@@ -206,35 +225,53 @@ def play_game(word):
         guess = input("\nPlease choose a letter or word:\n").upper()
         validate_input(word, guess)
         if not validate_input(word, guess):
-            print(text_color("31", f"Invalid data. Please enter only a single letter or a word containing {len(word)} characters.\n"))
+            print(text_color(
+                "31",
+                f"Invalid data. Please enter only a single letter or a word"
+                f" containing {len(word)} characters.\n"))
         else:
             if len(guess) == 1:
                 if guess in guessed_letters:
-                    print(text_color("31", f'You already guessed {guess}. Please try again.\n'))
+                    print(text_color(
+                        "31",
+                        f'You already guessed {guess}. Please try again.\n'
+                    ))
                 elif guess not in word:
                     guessed_letters.append(guess)
                     guesses -= 1
                     print(hangman_stages[guesses])
                     print(f"Word: {' '.join(word_completion)}")
-                    print(text_color("31", f'Sorry! {guess} is not in the word.\n'))
+                    print(text_color(
+                        "31",
+                        f'Sorry! {guess} is not in the word.\n'
+                    ))
                     word_complete = check_word_completion(word_completion)
                 else:
                     guessed_letters.append(guess)
                     update_word_completion(guess, word_list, word_completion)
                     print(hangman_stages[guesses])
                     print(f"Word: {' '.join(word_completion)}")
-                    print(text_color("32", f'Congratulations. {guess} is in the word.\n'))
+                    print(text_color(
+                        "32",
+                        f'Congratulations. {guess} is in the word.\n'
+                    ))
                     word_complete = check_word_completion(word_completion)
 
             if len(guess) > 1:
                 if guess in guessed_words:
-                    print(text_color("31", f'You already guessed {guess}. Please try again.\n'))
+                    print(text_color(
+                        "31",
+                        f'You already guessed {guess}. Please try again.\n'
+                    ))
                 elif guess != word:
                     guessed_words.append(guess)
                     guesses -= 1
                     print(hangman_stages[guesses])
                     print(f"Word: {' '.join(word_completion)}")
-                    print(text_color("31", f'Sorry! {guess} is incorrect. Please try again.\n'))
+                    print(text_color(
+                        "31",
+                        f'Sorry! {guess} is incorrect. Please try again.\n'
+                    ))
                 else:
                     print(hangman_stages[guesses])
                     word_completion = list(guess)
@@ -243,12 +280,17 @@ def play_game(word):
                     word_complete = check_word_completion(word_completion)
 
         if guesses == 0:
-            print(
-                text_color("1;31", f'GAME OVER!!! \nYou have run out of guesses. '
-                f'The correct word was {word}.'))
+            print(text_color(
+                "1;31",
+                f'GAME OVER!!! \nYou have run out of guesses. '
+                f'The correct word was {word}.'
+            ))
 
     if word_complete:
-        print(text_color("1;32", f'CONGRATULATIONS! YOU WIN!! The word is {word}!'))
+        print(text_color(
+            "1;32",
+            f'CONGRATULATIONS! YOU WIN!! The word is {word}!'
+        ))
     restart_game()
 
 
@@ -299,7 +341,7 @@ def restart_game():
             print("Thanks for stopping by! We hope to see you again soon.")
             break
         else:
-            print("Not a valid input. Please type Y or N")
+            print(text_color("31", "Not a valid input. Please type Y or N"))
 
 
 def main():
