@@ -76,9 +76,13 @@ As this is a terminal based game the main colour scheme is white and black. Colo
 ## Features
 
 ### Introduction Screen
-- The introduction screen features ASCII art to display to the user that they are playing a hangman game. It also contains a feature asking the user for their name to display a personalized message to ask if they are ready to play the game. 
+- The introduction screen features ASCII art to display to the user that they are playing a hangman game. It also contains a feature asking the user for their name to display a personalized message to ask if they would like to view instructions and are ready to play the game. 
 
 <img src="documentation/features/title.jpg">
+
+### Instruction Screen
+- The instruction screen gives a brief description of how the game is played in the event the user is unfamiliar with it. 
+
 
 ### Game Display
 - The main display screen displays the hangman figure along with 
@@ -92,12 +96,16 @@ In the future, this game could be further developed to include the following:
 
 ## Technologies Used
 
-### Languages, Frameworks, Libraries & Programs Used
+### Languages
 - Python
+
+### Frameworks, Libraries & Programs Used
+- Random Python Library
 - Heruko
 - GitPod
 - GitHub
 - CI Python Linter
+- Lucid Chart
 
 
 ## Testing
@@ -105,7 +113,7 @@ In the future, this game could be further developed to include the following:
 ### Validator Testing
 - [CI PEP8 Linter](https://pep8ci.herokuapp.com/)
 
- ![HTML results index](documentation/jpg)
+ ![Run.py Linter Results](documentation/linter.jpg)
 
 
 ### Lighthouse Testing
@@ -148,11 +156,7 @@ There are no unaddressed known bugs at this time.
 
 ### Code
 
-1. Code for using an event listener on a class is adapted from [Stackoverflow.com](https://stackoverflow.com/questions/19655189/javascript-click-event-listener-on-class).
-2. Use of event.target.id is adapted from [Coreui.io](https://coreui.io/blog/how-to-get-element-id-in-javascript/). 
-3. Code for dymanically updated audio source based on which witness image the user selects is adapted from [Stackoverflow.com](https://stackoverflow.com/questions/10792163/change-audio-src-with-javascript).
-4. Code to for stopAllAudio function that pauses audio if another is played or an answer is selected was taken from [Stackoverflow.com](https://stackoverflow.com/questions/43430897/javascript-to-stop-playing-sound-when-another-starts).
-5. [TabletoMarkdown.com](https://tabletomarkdown.com/convert-spreadsheet-to-markdown/) was used to convert my additional manual testing table from an excel spreadsheet to markdown. 
+1. 
 
 
 ### Acknowledgments
