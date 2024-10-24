@@ -84,7 +84,7 @@ def text_color(color_code, text):
 
 def welcome_screen():
     '''
-    Prints Welcome Screen
+    Prints Welcome Screen & Instructions
     '''
     print(r"""
       _    _
@@ -100,13 +100,40 @@ def welcome_screen():
     name = input("\n\nWelcome to Hangman! What's your name?\n")
     print(f'\nHello {name}.')
 
+    while True:
+        instructions = input("Would you like to view the game instructions? Please enter Y or N:\n").upper()
+        if instructions == "Y":
+            print(r"""
+            ---------------------------------------------------------------------------
+            ---------------------------------------------------------------------------
+                
+                                        How To Play
+                
+            Guess the secret word before the stick figure man is hung from the gallows.
+
+            Enter a letter to see if it is in the word. If the guess is correct the 
+            corresponding blank slot will be filled with the letter. If the guess is 
+            wrong, a new peice of the stick figure man will be drawn. You have 6 lives
+            before the drawing is complete & you lose the game.
+
+            Do your best to save the man....
+             
+            ---------------------------------------------------------------------------
+            ---------------------------------------------------------------------------
+            """)
+            break
+        elif instructions == "N":
+            break
+        else:
+            print(text_color("31", f"\nSorry! {instructions.upper()} is not a valid input. Please type Y or N"))
+
 
 def start_game():
     '''
     Determines if a new game should commence
     '''
     while True:
-        new_game = input(f'Are you ready to start a new game of hangman? Please input {text_color('34', 'Y')} or {text_color('34', 'N')}:\n').upper()
+        new_game = input(f'\nAre you ready to start a new game of hangman? Please input {text_color('34', 'Y')} or {text_color('34', 'N')}:\n').upper()
         if new_game == "Y":
             print("\nGreat! Let's begin")
             word = get_word()
