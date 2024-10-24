@@ -77,6 +77,7 @@ hangman_stages = [
 def text_color(color_code, text):
     '''
     Apply ANSI color codes to text
+
     '''
     return f'\033[{color_code}m{text}\033[0m'
 
@@ -233,12 +234,7 @@ def validate_input(word, guess):
     equal to the length of the word, containing no special characters
     or numbers
     '''
-    if len(guess) == 1 and guess.isalpha():
-        return True
-    elif len(guess) == len(word) and guess.isalpha():
-        return True
-    else:
-        return False
+    return guess.isalpha() and (len(guess) == 1 or len(guess) == len(word))
 
 
 def update_word_completion(guess, word_list, word_completion):
