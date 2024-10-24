@@ -125,41 +125,37 @@ def get_word():
     '''
     Randomly selects a word from the wordlist for the game
     '''
+    words = {
+        '1': [
+            'CAMP', 'BARK', 'MOON', 'FIRE', 'CORN',
+            'WOLF', 'SHIP', 'TREE', 'FOOD', 'BANK',
+            'WIND', 'SNOW', 'DUCK', 'BOOK', 'FISH',
+            'ROAD', 'HILL', 'ROCK', 'STAR', 'GOLD'
+        ],
+        '2': [
+            'TRAIN', 'SHARK', 'PEACH', 'CLOUD', 'BREAD',
+            'SNAKE', 'LIGHT', 'STAGE', 'BRICK', 'HORSE',
+            'BRAIN', 'DRIVE', 'PIZZA', 'CRANE', 'FLUTE',
+            'GRAPE', 'SMILE', 'TOAST', 'WORLD', 'CYCLE'
+        ],
+        '3': [
+            'PLANET', 'JUNGLE', 'ROCKET', 'GARDEN', 'SILENT',
+            'MOBILE', 'BRIDGE', 'FARMER', 'MARKET', 'MOUNTA',
+            'DESERT', 'PIRATE', 'STREAM', 'BOTTLE', 'SCHOOL',
+            'ISLAND', 'SUMMER', 'SPIDER', 'KITTEN', 'STREET'
+        ]
+    }
+    
     while True:
         difficulty = input(
             'Please select your difficulty level:\n\n'
             '1. Easy\n2. Medium\n3. Hard\n\n'
             'Enter 1, 2 or 3 accordingly:\n'
             )
-        if difficulty == '1':
-            words = [
-                'CAMP', 'BARK', 'MOON', 'FIRE', 'CORN',
-                'WOLF', 'SHIP', 'TREE', 'FOOD', 'BANK',
-                'WIND', 'SNOW', 'DUCK', 'BOOK', 'FISH',
-                'ROAD', 'HILL', 'ROCK', 'STAR', 'GOLD'
-                ]
-            word = random.choice(words)
-            return word
-        elif difficulty == '2':
-            words = [
-                'TRAIN', 'SHARK', 'PEACH', 'CLOUD', 'BREAD',
-                'SNAKE', 'LIGHT', 'STAGE', 'BRICK', 'HORSE',
-                'BRAIN', 'DRIVE', 'PIZZA', 'CRANE', 'FLUTE',
-                'GRAPE', 'SMILE', 'TOAST', 'WORLD', 'CYCLE'
-                ]
-            word = random.choice(words)
-            return word
-        elif difficulty == '3':
-            words = [
-                'PLANET', 'JUNGLE', 'ROCKET', 'GARDEN', 'SILENT',
-                'MOBILE', 'BRIDGE', 'FARMER', 'MARKET', 'MOUNTA',
-                'DESERT', 'PIRATE', 'STREAM', 'BOTTLE', 'SCHOOL',
-                'ISLAND', 'SUMMER', 'SPIDER', 'KITTEN', 'STREET'
-                ]
-            word = random.choice(words)
-            return word
-        else:
-            print('Not A Valid Option. Please select 1, 2, or 3')
+        if difficulty in words:
+            return random.choice(words[difficulty])
+        else: 
+            print(text_color("31", f'Sorry! {difficulty.upper()} is not A valid option. Please enter 1, 2, or 3.'))
 
 
 def play_game(word):
