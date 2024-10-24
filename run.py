@@ -98,7 +98,7 @@ def welcome_screen():
     """)
 
     name = input("\n\nWelcome to Hangman! What's your name?\n")
-    print(f'\nHello {name}. Are you ready to start a new game of hangman?')
+    print(f'\nHello {name}.')
 
 
 def start_game():
@@ -106,7 +106,7 @@ def start_game():
     Determines if a new game should commence
     '''
     while True:
-        new_game = input(f'Please input {text_color('34', 'Y')} or {text_color('34', 'N')}:\n').upper()
+        new_game = input(f'Are you ready to start a new game of hangman? Please input {text_color('34', 'Y')} or {text_color('34', 'N')}:\n').upper()
         if new_game == "Y":
             print("\nGreat! Let's begin")
             word = get_word()
@@ -118,7 +118,7 @@ def start_game():
             print("Thanks for stopping by! We hope to see you again soon.")
             break
         else:
-            print("Not a valid input. Please type Y or N")
+            print(text_color("31", f"\nSorry! {new_game.upper()} is not a valid input. Please type Y or N"))
 
 
 def get_word():
@@ -155,7 +155,7 @@ def get_word():
         if difficulty in words:
             return random.choice(words[difficulty])
         else: 
-            print(text_color("31", f'Sorry! {difficulty.upper()} is not A valid option. Please enter 1, 2, or 3.'))
+            print(text_color("31", f'\nSorry! {difficulty.upper()} is not A valid option. Please enter 1, 2, or 3.'))
 
 
 def play_game(word):
@@ -173,44 +173,43 @@ def play_game(word):
     word_complete = False
 
     while guesses > 0 and not word_complete:
-        print(f'You have {guesses} guesses remaining!')
+        print(f'You have {text_color("1;38", guesses)} guesses remaining!')
         guess = input("\nPlease choose a letter or word:\n").upper()
         validate_input(word, guess)
         if not validate_input(word, guess):
-            print(f"Invalid data. Please enter only a single letter or a word containing {len(word)} characters.")
+            print(text_color("31", f"Invalid data. Please enter only a single letter or a word containing {len(word)} characters.\n"))
         else:
             if len(guess) == 1:
                 if guess in guessed_letters:
-                    print(f'You already guessed {guess}. Please try again.\n')
+                    print(text_color("31", f'You already guessed {guess}. Please try again.\n'))
                 elif guess not in word:
                     guessed_letters.append(guess)
                     guesses -= 1
                     print(hangman_stages[guesses])
-                    print(word_completion)
+                    print(f"Word: {' '.join(word_completion)}")
                     print(text_color("31", f'Sorry! {guess} is not in the word.\n'))
                     word_complete = check_word_completion(word_completion)
                 else:
                     guessed_letters.append(guess)
                     update_word_completion(guess, word_list, word_completion)
                     print(hangman_stages[guesses])
-                    print(word_completion)
+                    print(f"Word: {' '.join(word_completion)}")
                     print(text_color("32", f'Congratulations. {guess} is in the word.\n'))
                     word_complete = check_word_completion(word_completion)
 
             if len(guess) > 1:
                 if guess in guessed_words:
-                    print(f'You already guessed {guess}. Please try again.\n')
+                    print(text_color("31", f'You already guessed {guess}. Please try again.\n'))
                 elif guess != word:
                     guessed_words.append(guess)
                     guesses -= 1
                     print(hangman_stages[guesses])
-                    print(word_completion)
+                    print(f"Word: {' '.join(word_completion)}")
                     print(text_color("31", f'Sorry! {guess} is incorrect. Please try again.\n'))
                 else:
                     print(hangman_stages[guesses])
                     word_completion = list(guess)
-                    print(word_completion)
-                    print(text_color("32", f'Congratulations. {guess} is the word.'))
+                    print(f"Word: {' '.join(word_completion)}")
                     guessed_words.append(guess)
                     word_complete = check_word_completion(word_completion)
 
