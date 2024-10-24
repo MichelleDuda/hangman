@@ -174,6 +174,8 @@ def play_game(word):
 
     while guesses > 0 and not word_complete:
         print(f'You have {text_color("1;38", guesses)} guesses remaining!')
+        print(f"Guessed Letters: {' '.join(guessed_letters)}")
+        print(f"Guessed Words: {' '.join(guessed_words)}")
         guess = input("\nPlease choose a letter or word:\n").upper()
         validate_input(word, guess)
         if not validate_input(word, guess):
