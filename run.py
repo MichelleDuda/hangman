@@ -105,25 +105,25 @@ def welcome_screen():
             "Would you like to view the game instructions? Enter Y or N:\n"
         ).upper()
         if instructions == "Y":
-            print(r"""
-            ----------------------------------------------------------------------
-            ----------------------------------------------------------------------
+            print("""
+----------------------------------------------------------------------
+----------------------------------------------------------------------
 
-                                        How To Play
+                            How To Play
 
-            Guess the secret word before the stick figure man is hung from the
-            gallows.
+Guess the secret word before the stick figure man is hung from the
+gallows.
 
-            Enter a letter to see if it is in the word. If the guess is correct
-            the corresponding blank slot will be filled with the letter. If the
-            guess is wrong, a new peice of the stick figure man will be drawn.
+Enter a letter to see if it is in the word. If the guess is correct
+the corresponding blank slot will be filled with the letter. If the
+guess is wrong, a new peice of the stick figure man will be drawn.
 
-            You have 6 lives until the drawing is complete & you lose the game.
+You have 6 lives until the drawing is complete & you lose the game.
 
-            Do your best to save the man....
+Do your best to save the man....
 
-            ----------------------------------------------------------------------
-            ----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
             """)
             break
         elif instructions == "N":
