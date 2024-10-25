@@ -172,12 +172,14 @@ In the future, this game could be further developed to include the following:
 
 ### Browser Compatibility
 This website was tested on the following browsers:
-- Google Chrome Version 127.0.6533.89 (Official Build) (64-bit)
-- Microsoft Edge Version 127.0.2651.86 (Official build) (64-bit)
+- Google Chrome Version 129.0.6668.103 (Official Build) (64-bit)
+- Microsoft Edge Version 130.0.2849.46 (Official build) (64-bit)
 - Mozilla Firefox Version 128.0.3 (64-bit)
 
 ### Bugs
-
+1. Error when trying to update word_completion list. This was due to not being able to enumerate because the list was initalized using word_completion = [" " * len(word)] which created a single string. Updated code to word_completion = ["_" for _ in word] to create the appropriate list. 
+2. Game instuctions were appearing indented on the screen. Removed leading indentation spaces in multistring print statement to align text properly. 
+3. Game only prompted user for the option to replay once. Added a loop to the function. 
 
 ### Known Bugs
 There are no unaddressed known bugs at this time. 
