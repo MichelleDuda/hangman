@@ -56,7 +56,8 @@ As the Site Owner, I want to create a game that:
   3. easily and intuitively interact with the game.
   4. be able to see how many guesses I have remaining.
   5. be able to which letters I have correctly guessed. 
-  6. be able to easily see the result of the game and be able to play again.
+  6. be able to see which letters and words I have already guessed, whether correct or incorrect. 
+  7. be able to easily see the result of the game and be able to play again.
 
 
 ## Design
@@ -127,11 +128,19 @@ In the future, this game could be further developed to include the following:
 
 ### User Story Testing
 
-### Site Owner Goals
-1. 
+#### Site Owner Goals
+  1. The use of ASCII art to display the title and the various stages of hangman along with the color coding of the various display messages help to capture the users attention and engage them more in the game. 
+  2. The game is educational in that it helps to test and expand the user’s vocabulary. It also aids in spelling as the user will not  be able to complete the task without properly spelling the word. 
 
 ### User Goals
-1. 
+  1. I am easily able to understand the purpose of the game as the introduction screen clearly displays ‘HANGMAN’, the title of a very well known game. There is also an option to view instructions which lay out how to play in the event I am unfamiliar with it. 
+  2. I am easily able to view the instructions, as after asking my name the first question that is then asked is whether or not I would like to view instructions. I have to input Y or N in order to proceed with the game. 
+  3. I am able to easily interact with the game as there are clear input prompts that instruct me as to what I need to enter. If incorrect data is entered I am provided with a red warning message that let’s me know the data is not valid and what data I need to input. 
+  4. I am able to easily see how many guesses I have remaining, as there is a line displayed with the number of remaining guesses after each guess I input.  
+  5. I am able to easily see which letters I have guessed correctly as the hangman stage drawing and a partially filled in word containing my correctly guessed letters and underscores in the appropriate places are displayed before each guess.  
+ 6. I am able to easily see which letters and words I have already guessed as lists of both are displayed along with the hangman stage drawing and partially completed word at the beginning of each prompt for my next guess. 
+  7. I am easily able to see the end result as a bright bold message is displayed in green if I won or in red if I lost. There is then a prompt asking whether or not I would like to play again. No will result in a message thanking me for playing, while yes will result in the game looping back to the beginning and asking me to choose a difficulty level. 
+
 
 
 ### Browser Compatibility
