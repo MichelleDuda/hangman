@@ -129,7 +129,8 @@ In the future, this game could be further developed to include the following:
 - GitPod
 - GitHub
 - CI Python Linter
-- Lucid Chart
+- Microsoft Word was used for the flowchart
+- Notepad was used to construct hangman figures
 
 
 ## Testing
@@ -245,3 +246,4 @@ To Clone this repository:
 
 1. [TabletoMarkdown.com](https://tabletomarkdown.com/convert-spreadsheet-to-markdown/) was used to convert my additional manual testing table from an excel spreadsheet to markdown.
 2. [Kaggle.com](https://www.kaggle.com/discussions/general/273188) was used to help apply color to text. 
+3. [https://patorjk.com/software/taag/#p=display&f=Big&t=Hangman%20](https://patorjk.com/software/taag/#p=display&f=Big&t=Hangman%20) was used to generate the hangman ASCII art. 

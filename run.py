@@ -85,6 +85,9 @@ def text_color(color_code, text):
 def welcome_screen():
     '''
     Prints Welcome Screen & Instructions
+
+    Hangman ASCII generated with:
+    https://patorjk.com/software/taag/#p=display&f=Big&t=Hangman%20
     '''
     print(r"""
       _    _
