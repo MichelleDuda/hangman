@@ -65,12 +65,10 @@ As the Site Owner, I want to create a game that:
 ### Colour
 As this is a terminal based game the main colour scheme is white and black. Coloured text is introduced to enhance the user experience and draw attention to warning messages. Red is used for invalid input messages and incorrrect guess messages. Green text is used for correct guesses and to alert the user if they won the game.
 
-<img src="documentation/colorpallete.jpg">
-
 ### Flowchart
 
 <details><summary>Flowchart</summary>
-<img src="documentation/wireframes/flowchart.jpg">
+<img src="documentation/flowchart.jpg">
 </details>
 
 
@@ -79,14 +77,37 @@ As this is a terminal based game the main colour scheme is white and black. Colo
 ### Introduction Screen
 - The introduction screen features ASCII art to display to the user that they are playing a hangman game. It also contains a feature asking the user for their name to display a personalized message to ask if they would like to view instructions and are ready to play the game. 
 
-<img src="documentation/features/title.jpg">
+<img src="documentation/intro.jpg">
 
 ### Instruction Screen
-- The instruction screen gives a brief description of how the game is played in the event the user is unfamiliar with it. 
+- The instruction screen gives a brief description of how the game is played in the event the user is unfamiliar with it. After the instructions display the user is asked whether or not they would like to start a new game. If they select “N” the game will end. If they select “Y” a new game will initialize and they will be directed to select a difficulty level. Error handling is in place for the function that controls this selection. If a user enters anything other than “Y” or “N” an error message will display and they will be prompted to enter a selection again until valid data is input. 
 
+<img src="documentation/instructions.jpg">
+
+### Difficulty Level Screen
+- The difficulty level screen was implemented to allow users to have more control over the difficulty of the word they are trying to guess. Easy will generate a 4 letter word. Medium will generate a 5 letter word. Hard will generate a 6 letter word. Error handling is in place for the function that controls this selection. If a user enters anything other than “1” “2” or “3” an error message will display and they will be prompted to enter a selection again until valid data is input.
+
+<img src="documentation/difficulty.jpg">
 
 ### Game Display
-- The main display screen displays the hangman figure along with 
+- The main screen consists of a picture of the gallows that updates with the appropriate version of the hangman figure, based on how many incorrect guesses the user has made at any specific time. The screen also displays to the user the number of guesses they have remaining, the letters and words they have already guessed, as well as a printout of the secret word with underscores in any position where they have not correctly identified the letter yet and the correct letters they have guessed.  
+
+<img src="documentation/main_game_screen.jpg">
+
+See [flowchart](#flowchart) for a description of game details and error handling.
+
+### Display Messages
+- The game contains several display messages for invalid input or incorrect guesses. These messages are colored in red to enhance the user experience and make them stand out from the other elements of the game. Red was chosen as it indicates something either unfavorable or incorrect. 
+
+<img src="documentation/incorrect_guess.jpg">
+<img src="documentation/already_guessed.jpg">
+<img src="documentation/game_over.jpg">
+<img src="documentation/invalid_data.jpg">
+
+- The game also contains display messages for correct guesses and for winning the game. These message are colored in green to enhance the user experience and make them stand out from the other elements of the game. Green was chosen as it indicates something either favorable or correct. 
+
+<img src="documentation/correct_guess.jpg">
+<img src="documentation/win_game.jpg">
 
 
 ### Future Features
