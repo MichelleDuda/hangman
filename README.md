@@ -32,7 +32,6 @@
     * [How to Clone The Repository](#how-to-clone-the-repository)
 * [Credits](#credits)
     * [Code](#code)
-    * [Acknowledgments](#acknowledgments)
 
 
 ## Introduction
@@ -244,9 +243,5 @@ To Clone this repository:
 
 ### Code
 
-1. [TabletoMarkdown.com](https://tabletomarkdown.com/convert-spreadsheet-to-markdown/) was used to convert my additional manual testing table from an excel spreadsheet to markdown. 
-
-
-### Acknowledgments
-
-1. My mentor Dick Vl
+1. [TabletoMarkdown.com](https://tabletomarkdown.com/convert-spreadsheet-to-markdown/) was used to convert my additional manual testing table from an excel spreadsheet to markdown.
+2. [Kaggle.com](https://www.kaggle.com/discussions/general/273188) was used to help apply color to text. 
