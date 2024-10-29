@@ -309,6 +309,9 @@ def validate_input(word, guess):
 def update_word_completion(guess, word_list, word_completion):
     '''
     Updates the word_completion variable with correctly guessed letters
+
+    Site used to help with enumerate function:
+    https://www.geeksforgeeks.org/enumerate-in-python/
     '''
     for i, letter in enumerate(word_list):
         if guess == letter:

@@ -247,3 +247,4 @@ To Clone this repository:
 1. [TabletoMarkdown.com](https://tabletomarkdown.com/convert-spreadsheet-to-markdown/) was used to convert my additional manual testing table from an excel spreadsheet to markdown.
 2. [Kaggle.com](https://www.kaggle.com/discussions/general/273188) was used to help apply color to text. 
 3. [https://patorjk.com/software/taag/#p=display&f=Big&t=Hangman%20](https://patorjk.com/software/taag/#p=display&f=Big&t=Hangman%20) was used to generate the hangman ASCII art. 
+4. [Geeksforgeeks.org](https://www.geeksforgeeks.org/enumerate-in-python) was used to understand enumerate function to create update_word_completion function.
