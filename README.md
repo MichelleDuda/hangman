@@ -67,9 +67,10 @@ As this is a terminal based game the main colour scheme is white and black. Colo
 
 ### Flowchart
 
-<details><summary>Flowchart</summary>
+#### Flowchart
 <img src="documentation/flowchart.jpg">
-</details>
+
+Full PDF Version Available:  <a href="https://github.com/michelleduda/hangman/blob/main/documentation/flowchart.pdf" target="_blank">Hangman Flowchart</a>
 
 
 ## Features
