@@ -18,7 +18,7 @@
     * [Future Features](#future-features)
 * [Technologies Used](#technologies-used)
     * [Languages](#languages)
-    * [Frameworks, Libraries & Programs Used](*framworks-libraries--programs-used)
+    * [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
 * [Testing](#testing)
     * [Validator Testing](#validator-testing)
     * [Lighthouse Testing](#lighthouse-testing)
@@ -211,6 +211,32 @@ There are no unaddressed known bugs at this time.
 ## Deployment
 
 ### How This Site Was Deployed
+This site was deployed via Heroku.
+1. Log into Heroku (https://www.heroku.com).
+2. Click on Create 'New App' button.
+3. Name the app & choose your region. Click 'Create App' button.
+4. Go to the Settings Tab.
+5. In the Config Vars section, click 'Reveal Config Vars' button.
+6. Enter PORT in the key field and 8000 in the value field. Then click 'Add' button.
+7. Go to the Buildpacks section and click 'Add Buildpacks' button. 
+8. Add Python and NodeJS buildpacks (Ensure Python is on top).
+9. Go to the Deploy Tab.
+10. Select GitHub in the Deployment Method section.
+11. Confirm to connect to GitHub.
+12. Search for repository name and click Connect.
+13. Make sure branch is set to main and click 'Deploy Branch' button in Manual Deploy section. .
+
+### How to Clone the Repository
+
+To Clone this repository:
+1. Navigate to [https://github.com/MichelleDuda/hangman](https://github.com/MichelleDuda/hangman).
+2. Click on the "<> Code" button.
+3. Copy the URL for the repository using HTTPS, SSH, or GitHub CLI. 
+4. Open Git Bash.
+5. Change the working directory to the location you want to clone the directory to. 
+6. Type git clone and paste the URL that was copied earlier. 
+7. Press Enter to begin the clone process. 
+
 
 
 ## Credits
